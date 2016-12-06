@@ -24,7 +24,7 @@ class Creator_Loadtime_Entity extends Base_Entity{
         $attribute['dom_content_loaded'] = parent::set_attribute("DOM Ready","string");
         $attribute['atf'] = parent::set_attribute("首屏计算","string");
         $attribute['window_loaded'] = parent::set_attribute("window loaded","string");
-        $attribute['origin'] = parent::set_attribute("origin","string"); 
+        $attribute['referer'] = parent::set_attribute("referer","string"); 
         return array_merge(parent::get_attribute(),$attribute);
     }
 

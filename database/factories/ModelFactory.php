@@ -203,3 +203,191 @@ $factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Gener
     ];
 });
 
+$factory->define(App\Models\Creator_Error_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'_id' => $faker->text(30),
+'class_name' => $faker->text(30),
+'url' => $faker->text(30),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Network_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'duration' => $faker->text(30),
+'url' => $faker->numberBetween(),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'unload_event_start' => $faker->text(30),
+'dom_content_loaded' => $faker->text(30),
+'atf' => $faker->text(30),
+'window_loaded' => $faker->text(30),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Error_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'_id' => $faker->text(30),
+'class_name' => $faker->text(30),
+'url' => $faker->text(30),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Network_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'duration' => $faker->text(30),
+'url' => $faker->numberBetween(),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'unload_event_start' => $faker->text(30),
+'dom_content_loaded' => $faker->text(30),
+'atf' => $faker->text(30),
+'window_loaded' => $faker->text(30),
+'origin' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Error_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'_id' => $faker->text(30),
+'class_name' => $faker->text(30),
+'url' => $faker->text(30),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Network_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'duration' => $faker->text(30),
+'url' => $faker->numberBetween(),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'unload_event_start' => $faker->text(30),
+'dom_content_loaded' => $faker->text(30),
+'atf' => $faker->text(30),
+'window_loaded' => $faker->text(30),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Error_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'_id' => $faker->text(30),
+'class_name' => $faker->text(30),
+'url' => $faker->text(30),
+'referer' => $faker->text(30),
+'message' => $faker->text(30),
+'line' => $faker->text(30),
+'column' => $faker->text(30),
+'object' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Network_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'duration' => $faker->text(30),
+'url' => $faker->numberBetween(),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'unload_event_start' => $faker->text(30),
+'dom_content_loaded' => $faker->text(30),
+'atf' => $faker->text(30),
+'window_loaded' => $faker->text(30),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Error_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'_id' => $faker->text(30),
+'class_name' => $faker->text(30),
+'url' => $faker->text(30),
+'referer' => $faker->text(30),
+'message' => $faker->text(30),
+'line' => $faker->text(30),
+'column' => $faker->text(30),
+'object' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Network_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'duration' => $faker->text(30),
+'url' => $faker->numberBetween(),
+'referer' => $faker->text(30),
+
+    ];
+});
+
+$factory->define(App\Models\Creator_Loadtime_Model::class, function (Faker\Generator $faker) {
+    return [
+        'created_at' => $faker->dateTime(),
+'updated_at' => $faker->dateTime(),
+'unload_event_start' => $faker->text(30),
+'dom_content_loaded' => $faker->text(30),
+'atf' => $faker->text(30),
+'window_loaded' => $faker->text(30),
+'referer' => $faker->text(30),
+
+    ];
+});
+

@@ -21,7 +21,7 @@ class Creator_Network_Entity extends Base_Entity{
         $attribute = array();
         $attribute['duration'] = parent::set_attribute("微信ID","string");
         $attribute['url'] = parent::set_attribute("登陆次数","int");
-        $attribute['origin'] = parent::set_attribute("origin","string"); 
+        $attribute['referer'] = parent::set_attribute("referer","string"); 
         return array_merge(parent::get_attribute(),$attribute);
     }
 
