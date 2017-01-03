@@ -19,9 +19,9 @@ class Creator_Network_Entity extends Base_Entity{
 
     public static function get_attribute(){
         $attribute = array();
-        $attribute['duration'] = parent::set_attribute("微信ID","string");
-        $attribute['url'] = parent::set_attribute("登陆次数","int");
-        $attribute['origin'] = parent::set_attribute("origin","string"); 
+        $attribute['duration'] = parent::set_attribute("加载时长","string");
+        $attribute['url'] = parent::set_attribute("登陆次数","string");
+        $attribute['referer'] = parent::set_attribute("referer","string"); 
         return array_merge(parent::get_attribute(),$attribute);
     }
 

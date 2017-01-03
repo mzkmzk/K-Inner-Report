@@ -1,9 +1,9 @@
 <?php
 
-Route::get('/', function () {
+Route::get('/a', function () {
     //$abc = [];
-	//echo $abc['12345'];
-	return view('welcome');
+	echo $abc['12345'];
+	//return view('welcome');
 });
 
 Route::get('/php_info', function () {

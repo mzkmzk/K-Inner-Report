@@ -21,7 +21,11 @@ class Creator_Error_Entity extends Base_Entity{
         $attribute['_id'] = parent::set_attribute("元素ID","string");
         $attribute['class_name'] = parent::set_attribute("类名","string");
         $attribute['url'] = parent::set_attribute("url","string"); 
-        $attribute['origin'] = parent::set_attribute("origin","string"); 
+        $attribute['referer'] = parent::set_attribute("referer","string"); 
+        $attribute['message'] = parent::set_attribute("message","string"); 
+        $attribute['line'] = parent::set_attribute("line","string"); 
+        $attribute['column'] = parent::set_attribute("column","string"); 
+        $attribute['object'] = parent::set_attribute("object","string"); 
         return array_merge(parent::get_attribute(),$attribute);
     }
 

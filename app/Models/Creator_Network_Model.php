@@ -8,7 +8,7 @@ use K_Laravel_Creator\Models\Base_Model;
 class Creator_Network_Model extends Base_Model
 {
     protected $table = 'Creator_Network';
-
+     protected $guarded = [];
 
 
 

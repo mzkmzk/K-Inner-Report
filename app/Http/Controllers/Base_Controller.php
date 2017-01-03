@@ -12,7 +12,7 @@ class Base_Controller extends Controller{
     protected $entity;
 
     protected  $model = null;
-
+   
 
     public function __construct(Request $request){
         $this->request = $request;
