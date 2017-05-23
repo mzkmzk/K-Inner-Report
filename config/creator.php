@@ -5,5 +5,6 @@ return [
         'Creator_Error',
         'Creator_Network',
         'Creator_Loadtime',
+        'Creator_Site'
     ],
 ];

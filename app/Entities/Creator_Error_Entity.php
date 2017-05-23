@@ -26,6 +26,8 @@ class Creator_Error_Entity extends Base_Entity{
         $attribute['line'] = parent::set_attribute("line","string"); 
         $attribute['column'] = parent::set_attribute("column","string"); 
         $attribute['object'] = parent::set_attribute("object","string"); 
+        $attribute['user_agent'] = parent::set_attribute("user_agent","string"); 
+        $attribute['error_code'] = parent::set_attribute("error_code","string"); 
         return array_merge(parent::get_attribute(),$attribute);
     }
 

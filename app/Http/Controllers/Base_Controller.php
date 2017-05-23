@@ -21,13 +21,22 @@ class Base_Controller extends Controller{
         $this->entity = new $entity_string;
     }
 
+    private function 
+
     public function query(){
 
         $model = $this->model->query();
-
+        $where_array = json_decode( $this->request->get('where')   )
+        dump($where_array)
         foreach($this->request->all() as $key => $value){
             if (array_key_exists($key,$this->entity->get_attribute()) ==true){
                 $model = $model->where($key,$value);
+            }
+        }
+
+        foreach ($where_array as $key => $value) {
+            if (array_key_exists($value->key,$this->entity->get_attribute()) ==true){
+                $model = $model->where($value->key, $value->condition, $value->value);
             }
         }
 

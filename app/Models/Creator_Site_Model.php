@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use K_Laravel_Creator\Models\Base_Model;
 
-class Creator_Network_Model extends Base_Model
+class Creator_Site_Model extends Base_Model
 {
-    protected $table = 'Creator_Network';
+    protected $table = 'Creator_Site';
 
 
 
