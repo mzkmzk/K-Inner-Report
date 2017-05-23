@@ -15,20 +15,8 @@ class Site_Controller extends Creator_Site_Controller
 
      public function authentication_site($url, $site){
          $request = [
-            'url' => $url . '/k_report',
-            /*'headers' => [
-                'Content-Type: application/x-www-form-urlencoded',
-                'Cache-Control: no-cache',
-                'Postman-Token: 70423b62-3ab5-0e60-05e6-9584df92a36f'
-            ],
-            'version' => 1.1,
-            'content' =>  http_build_query([
-                'client_id' => env('SINA_CLIENT_ID'),
-                'client_secret' => env('SINA_CLIENT_SECRET'),
-                'grant_type' => 'authorization_code',
-                'code' => $code,
-                'redirect_uri' => env('URL')
-            ]),*/
+            'url' => $url . '/k_report'
+            
         ];
         dump($jump_url);
         $response = \HttpClient::get($request);
