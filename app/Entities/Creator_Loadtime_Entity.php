@@ -25,7 +25,9 @@ class Creator_Loadtime_Entity extends Base_Entity{
         $attribute['atf'] = parent::set_attribute("首屏计算","string");
         $attribute['window_loaded'] = parent::set_attribute("window loaded","string");
         $attribute['referer'] = parent::set_attribute("referer","string"); 
+
          $attribute['user_agent'] = parent::set_attribute("user_agent","string"); 
+
         return array_merge(parent::get_attribute(),$attribute);
     }
 
