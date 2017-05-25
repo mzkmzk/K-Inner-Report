@@ -37,7 +37,7 @@ class Site_Controller extends Creator_Site_Controller
                     "result" => '30002',
                     "message" => '该域名已经被当前账号验收'
                 ]);
-        }else if (trim($response->content() ) == $this->request->get('user_id') * 2 ) {
+        }else if ( !is_null( $this->request->get('creator_user_id'))  && trim($response->content() ) == $this->request->get('creator_user_id') * 2 ) {
             return $this->insert([
                 'creator_user_id' => $creator_user_id,
                 'host' => $url_info[1]
