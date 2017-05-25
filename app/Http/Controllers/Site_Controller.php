@@ -14,7 +14,7 @@ class Site_Controller extends Creator_Site_Controller
      }
 
     public function authentication_site( ){
-        $creator_user_id = $this->request->get('user_id');
+        $creator_user_id = $this->request->get('creator_user_id');
         $url = urldecode($this->request->get('url'));
         $reg = '/(\w*\.(com.cn|com|net.cn|net|org.cn|org|gov.cn|gov|cn|mobi|me|info|name|biz|cc|tv|asia|hk|网络|公司|中国)).*$/';
 
