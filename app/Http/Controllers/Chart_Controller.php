@@ -17,18 +17,13 @@ use App\Models\Creator_Network_Model;
 class Chart_Controller extends BaseController
 {
 
-     //public function __construct(Request $request, $entity_name = ''){
-        //parent::__construct($request, $entity_name);
-        //$this->model =new Creator_Error_Model();
-     //}
-//SELECT AVG(  `dom_content_loaded` -  `unload_event_start` ) 
-//FROM  `Creator_Loadtime` 
-//WHERE `updated_at` >= '2017-02-14' 
-//GROUP BY updated_at;
+   
     public function line(Request $request) {
+
         //$entity_model_name = 'Creator_' . $request->entity_name . '_Model';
         //$model = new $entity_model_name;
        $where_array = json_decode( $request->get('where')   );
+       //dump($where_array);
         $data = DB::table('Creator_Loadtime')
                   ->select(DB::raw("
                                     AVG(  dom_content_loaded -  unload_event_start ) as dom_load, 

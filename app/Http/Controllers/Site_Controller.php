@@ -13,79 +13,46 @@ class Site_Controller extends Creator_Site_Controller
         parent::__construct($request, $entity_name);
      }
 
-     public function authentication_site($url, $site){
-         $request = [
+    public function authentication_site( ){
+        $creator_user_id = $this->request->get('user_id');
+        $url = urldecode($this->request->get('url'));
+        $reg = '/(\w*\.(com.cn|com|net.cn|net|org.cn|org|gov.cn|gov|cn|mobi|me|info|name|biz|cc|tv|asia|hk|网络|公司|中国)).*$/';
+
+        preg_match($reg,$url,$url_info);
+
+        $request = [
             'url' => $url . '/k_report'
-            
         ];
-        dump($jump_url);
+        //dump($jump_url);
         $response = \HttpClient::get($request);
-        error_log(json_encode( $response->json()));
-        return $response->json();
-     }
-
-     public function sinaLogin() {
-
-        dump($this->request->all());
-
-        $jump_url = null;
-        if ( is_null($this->request->get('jump_url'))) {
-            $jump_url = env('URL');
+        //dump($response);
+        
+        if( $this->model
+                ->where('creator_user_id', $creator_user_id)
+                ->where('host', $url_info[1])
+                ->count() >= 1
+        ){
+            return 
+                response()->json([
+                    "result" => '30002',
+                    "message" => '该域名已经被当前账号验收'
+                ]);
+        }else if (trim($response->content() ) == $this->request->get('user_id') * 2 ) {
+            return $this->insert([
+                'creator_user_id' => $creator_user_id,
+                'host' => $url_info[1]
+            ]);
         }else {
-            $jump_url = $this->request->get('jump_url');
+            return 
+                response()->json([
+                    "result" => '30001',
+                    "message" => '检验失败'
+                ]);
+             
         }
 
-        dump($jump_url);
-        $code = $this->request->get('code');
-        $access_token = $this->sinaAccessToken($code, $jump_url);
-        dump($access_token);
-        //这里可以获取剩余过期时间,如果过少可以重新获取授权???每次登陆会产生不一样的access_token吗
-        $sina_uid = $access_token->uid;
-        $sina_access_token = $access_token->access_token;
-
-        $sina_user = $this->getSinaUser($sina_uid);
-
-        //dump($sina_user);
-        if(count($sina_user) === 0 ) {
-           $sina_user = $this->model->create([
-                'sina_uid' => $sina_uid,
-                'sina_access_token' => $sina_access_token,
-           ]);
-        }else {
-            $sina_user = $sina_user[0];
-            $sina_user['sina_access_token'] = $sina_access_token;
-             $sina_user->save();
-        }
-        //不安全 需要改善
-        return redirect($jump_url."?sina_access_token={$sina_access_token}&id={$sina_user['id']}");
-
+        //return $response->json();
      }
 
-     private function sinaAccessToken($code, $jump_url) {
-         $request = [
-            'url' => 'https://api.weibo.com/oauth2/access_token',
-            'headers' => [
-                'Content-Type: application/x-www-form-urlencoded',
-                'Cache-Control: no-cache',
-                'Postman-Token: 70423b62-3ab5-0e60-05e6-9584df92a36f'
-            ],
-            'version' => 1.1,
-            'content' =>  http_build_query([
-                'client_id' => env('SINA_CLIENT_ID'),
-                'client_secret' => env('SINA_CLIENT_SECRET'),
-                'grant_type' => 'authorization_code',
-                'code' => $code,
-                'redirect_uri' => env('URL')
-            ]),
-        ];
-        dump($jump_url);
-        $response = \HttpClient::post($request);
-        error_log(json_encode( $response->json()));
-        return $response->json();
-     }
-
-     private function getSinaUser($sina_uid) {
-        return  $user = $this->model->where('sina_uid',$sina_uid)
-                                    ->get();
-     }
+    
 }

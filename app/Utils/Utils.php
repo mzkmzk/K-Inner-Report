@@ -18,3 +18,6 @@ function get_all_id(K_Laravel_Creator\Models\Base_Model $base_mobel) {
     }
     return $model_id;
 }*/
+function get_user_url(){
+    dump(12321);
+}
